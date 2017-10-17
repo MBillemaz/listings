@@ -66,6 +66,8 @@ fr:
       models:
         listing:
           attributes:
+            password:
+              blank: "Mot de passe doit être saisi"
             email:
               blank: "Email doit être saisi"
             title:
