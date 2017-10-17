@@ -11,23 +11,16 @@
       .category.col-xs-8
         electro
     .row
-      .col-xs-4
+      .col-xs-3
+      .col-xs-9
         %p
           = l.description
-
-.listing
-  .name
-    %h3 Ordinateur Toshiba
-  .row
-    .col-xs-2
-      2016-10-16 20:41
-    .category.col-xs-8
-      Electro
-  .row
-    .col-xs-2
-      blablabla
-    .col-xs-4
-      %p Nam sole orto magnitude angusti gurgitis sed profundi a transitu arcebantur et dum
-  .row
-    .col-xs-4
-      %img{src: "/images/img_toshiba.jpg"}
+    .row
+      .col-xs-3
+      .col-xs-9
+        .price
+          %p
+            = number_to_currency(l.price, :unit => "€")
+    .row
+      .col-xs-3
+        %img{src: "/images/img_toshiba.jpg"}
