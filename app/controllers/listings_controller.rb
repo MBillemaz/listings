@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
 
   def index
     #@listings = Listing.search(params)
+    @listings = Listing.all
 
     # respond_to do |format|
     #   format.html

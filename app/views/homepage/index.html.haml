@@ -1,5 +1,8 @@
 .row
   .col-xs-8.col-xs-offset-2.search
     %h2= t('main_baseline')
+    .form-group{style: "display: flex"}
+      %Input.form-control#text{placeholder: t("search_placeholder")}
+      %Submit.btn.btn-success= t("search")
 
 

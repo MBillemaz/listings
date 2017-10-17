@@ -20,8 +20,8 @@
         /= f.label :category_id, class: 'form-label required'
         /= f.collection_select :category_id, Category.all, :id, :name, {}, {class: 'form-control'}
       .form-group
-        /= f.label :description, class: 'form-label required'
-        /= f.text_area :description, class: 'form-control'
+        = f.label :description, class: 'form-label required'
+        = f.text_area :description, class: 'form-control'
       .form-group
         /= f.label :picture, class: 'form-label required'
         /= f.file_field :picture, class: 'form-control'
