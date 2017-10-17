@@ -13,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -27,13 +27,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'sqlite3'
 #gem 'carrierwave'
-#gem 'route_translator'
+gem 'route_translator'
 #gem 'devise'
 #gem 'rails_admin', '~> 1.0'
 #gem 'fog'
 gem 'haml-rails'
 #gem 'apipie-rails'
-
+gem 'bcrypt'
 group :test do
   gem 'launchy'
   gem 'minitest'
@@ -47,6 +47,7 @@ group :test do
   gem 'warden'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'tzinfo-data'
 end
 
 group :development do
@@ -58,4 +59,3 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'byebug', platform: :mri
 end
-

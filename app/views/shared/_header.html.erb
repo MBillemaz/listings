@@ -4,7 +4,20 @@
       <div class='col-xs-2'><h1 class='title'><a href='<%= root_path %>'>Listings</a></h1></div>
       <div class='col-xs-10 pull-right'>
       </div>
-      <div class='clearfix'></div>
+      <div class='pull-right'>
+      <% if user_signed_in? %>
+        <%= link_to t('logout'), destroy_user_session_path, :method => :delete, :class=>"logout" %>
+        <%= link_to t('my_account'), edit_user_registration_path, :class=>"my-account" %>
+      <% else %>
+        <%= link_to t('sign_in'), new_user_session_path, :class=>"my-account" %>
+      <% end %>
+        <select class="language" data-do="setLocale">
+        <% I18n.available_locales.each do |loc|%>
+          <option value="<%= url_for(locale: loc.to_s)%>" <%= "selected" if I18n.locale == loc %> > <%= loc.upcase %></option>
+        <% end %>
+        </select>
+        <button class="btn btn-success"> <%= t("create_listing") %> </button>
+      </div>
     </div>
   </div>
 </div>
