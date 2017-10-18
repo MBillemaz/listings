@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
-
   def index
+    
     #@listings = Listing.search(params)
     @listings = Listing.all
 
@@ -28,11 +28,12 @@ class ListingsController < ApplicationController
   end
 
   def contact
-    Contact.generate(
+    @contact = Contact.new(
       user_id: current_user.id,
       listing_id: params[:listing_id],
       message: params[:message]
     )
+    @contact.save
   end
 
 private

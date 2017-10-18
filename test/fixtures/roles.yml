@@ -1,0 +1,5 @@
+user_role:
+  name: 'user'
+
+admin_role:
+  name: 'admin'

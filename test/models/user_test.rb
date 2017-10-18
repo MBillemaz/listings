@@ -1,7 +1,23 @@
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe User do
+
+  before do 
+    @seller = users(:seller)
+    @admin = users(:admin)
+    @buyer = user(:buyer)
+  end
+
+  it "returns true if role != admin" do 
+    assert_equal false, @seller.is_admin?
+  end
+
+  it "returns true if role == admin" do 
+    assert_equal true, @admin.is_admin?
+  end
+
+  it "returns full_name" do
+    assert_equal "John Doe", @buyer.full_name
+  end
+
 end

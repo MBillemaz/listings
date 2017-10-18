@@ -8,6 +8,8 @@
         - if user_signed_in?
           = link_to t('logout'), destroy_user_session_path, :method => :delete, class: "logout"
           = link_to t('my_account'), edit_user_registration_path, class: "my-account"
+          -if current_user.is_admin?
+            =link_to "Admin", rails_admin_path, class: "my-account"
         - else
           = link_to t('sign_in'), new_user_session_path, class: "my-account"
         %select.language{"data-do" => "setLocale"}

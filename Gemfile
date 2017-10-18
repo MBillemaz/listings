@@ -29,7 +29,6 @@ gem 'sqlite3'
 gem 'carrierwave'
 gem 'route_translator'
 gem 'devise'
-
 gem 'rails_admin', '~> 1.0'
 
 gem 'fog'

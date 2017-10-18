@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018083038) do
+ActiveRecord::Schema.define(version: 20171018144015) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "listing_id"
+    t.text "message"
   end
 
   create_table "listings", force: :cascade do |t|
@@ -25,6 +31,10 @@ ActiveRecord::Schema.define(version: 20171018083038) do
     t.decimal "price"
     t.integer "user_id"
     t.integer "category_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,6 +52,7 @@ ActiveRecord::Schema.define(version: 20171018083038) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.integer "role_id", default: 1
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

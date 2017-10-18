@@ -3,6 +3,8 @@
     %h2= t('main_baseline')
     .form-group{style: "display: flex"}
       %Input.form-control#text{placeholder: t("search_placeholder")}
-      %Submit.btn.btn-success= t("search")
+      = button_to t("search"), listings_path, class: "btn btn-success", method: :get
+      
+
 
 

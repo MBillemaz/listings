@@ -1,0 +1,17 @@
+admin:
+  first_name: 'admin'
+  last_name: 'admin last name'
+  role: admin_role
+  email: "admin@domain.com"
+
+seller:
+  first_name: 'seller'
+  last_name: 'seller last name'
+  role: user_role
+  email: "seller@domain.com"
+
+buyer:
+  first_name: 'John'
+  last_name: 'Doe'
+  email: "buyer@domain.com"
+  role: user_role
