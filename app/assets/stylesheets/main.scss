@@ -161,3 +161,17 @@ form.busy {
   color: #000;
   margin-right: 10px;
 }
+
+.form-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-container .well{
+  width: 45%;
+}
+
+.form-container .field input{
+  margin-bottom: 5%;
+}

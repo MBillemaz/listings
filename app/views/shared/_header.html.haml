@@ -1,0 +1,20 @@
+.container
+  .row
+    .top
+      .col-xs-2
+        %h1.title
+          %a{href: root_path}="Listings"
+      .pull-right{style: "display: flex"}
+        - if user_signed_in?
+          = link_to t('logout'), destroy_user_session_path, :method => :delete, class: "logout"
+          = link_to t('my_account'), edit_user_registration_path, class: "my-account"
+        - else
+          = link_to t('sign_in'), new_user_session_path, class: "my-account"
+        %select.language{"data-do" => "setLocale"}
+          - I18n.available_locales.each do |loc|
+            %option{value: url_for(locale: loc.to_s), selected: I18n.locale == loc}
+              = loc.upcase
+        - if user_signed_in?
+          = button_to t("create_listing"), new_listing_path, class: "btn btn-success", method: :get
+        - else
+          = button_to t("create_listing"), new_user_session_path, class: "btn btn-success", method: :get

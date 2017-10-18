@@ -29,11 +29,14 @@ gem 'sqlite3'
 gem 'carrierwave'
 gem 'route_translator'
 gem 'devise'
+
 gem 'rails_admin', '~> 1.0'
+
 gem 'fog'
 gem 'haml-rails'
 #gem 'apipie-rails'
-gem 'bcrypt', platform: :ruby
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+#gem 'bcrypt', platform: :ruby
 group :test do
   gem 'launchy'
   gem 'minitest'
