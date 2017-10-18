@@ -9,11 +9,11 @@
                 %h3
                   = l.title
           .row
-            .col-md-4
+            .col-md-2
               %p.date
                 = l.created_at.strftime("%F %H:%M")
-            .col-md-8
-              %a.category
+            .col-md-10
+              %p.category
                 %span.badge
                   = l.category.name
           .row
@@ -32,7 +32,7 @@
                 .col-md-6
                   .pull-right
                     - if user_signed_in?
-                      /= button_to t("contact"), new_listing_path, class: "btn btn-warning", method: :get #todo: modal
+                      = button_to t("contact"), new_listing_path, class: "btn btn-warning", method: :get #todo: modal
                       /= link_to t('contact'), new_user_session_path, class: 'btn btn-primary pull-right'
 
                     - else
