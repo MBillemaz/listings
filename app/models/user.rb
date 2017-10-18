@@ -9,6 +9,10 @@ class User < ApplicationRecord
   validates_presence_of :first_name, :last_name, :email
 
   def is_admin?
-    true
+    role.name == 'admin'
+  end
+
+  def full_name
+    first_name + " " + last_name
   end
 end

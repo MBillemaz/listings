@@ -1,4 +1,4 @@
-- @listings.each do |l|
+- @listings.each do |listing|
   .listing
     .container-fluid
       .row
@@ -7,28 +7,28 @@
             .col-md-12
               .name
                 %h3
-                  = l.title
+                  = listing.title
           .row
             .col-md-2
               %p.date
-                = l.created_at.strftime("%F %H:%M")
+                = listing.created_at.strftime("%F %H:%M")
             .col-md-10
               %p.category
                 %span.badge
-                  = l.category.name
+                  = listing.category.name
           .row
             .col-md-4
-              = image_tag l.picture, width: 300, class: 'img-responsive'
+              = image_tag listing.thumbnail , width: 300, class: 'img-responsive'
             .col-md-8
               .row
                 .col-md-12
                   %p
-                    = l.description
+                    = listing.description
               .row
                 .col-md-6
                   .price
                     %p
-                      = number_to_currency(l.price, :unit => "€")
+                      = number_to_currency(listing.price, :unit => "€")
                 .col-md-6
                   .pull-right
                     - if user_signed_in?
