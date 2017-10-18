@@ -13,8 +13,9 @@
               %p.date
                 = l.created_at.strftime("%F %H:%M")
             .col-md-8
-              %p.category
-                category (hardcoded)
+              %a.category
+                %span.badge
+                  = l.category.name
           .row
             .col-md-4
               = image_tag l.picture, width: 300, class: 'img-responsive'
@@ -30,5 +31,9 @@
                       = number_to_currency(l.price, :unit => "€")
                 .col-md-6
                   .pull-right
-                    %button.btn.btn-warning{:type => "button"}
-                      = t('contact')
+                    - if user_signed_in?
+                      /= button_to t("contact"), new_listing_path, class: "btn btn-warning", method: :get #todo: modal
+                      /= link_to t('contact'), new_user_session_path, class: 'btn btn-primary pull-right'
+
+                    - else
+                      = button_to t("contact"), new_user_session_path, class: "btn btn-warning", method: :get

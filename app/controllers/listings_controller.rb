@@ -4,10 +4,10 @@ class ListingsController < ApplicationController
     #@listings = Listing.search(params)
     @listings = Listing.all
 
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render :xml => @listings.to_xml }
-    # end
+    respond_to do |format|
+      format.html
+      format.json { render :json => @listings.to_json }
+    end
   end
 
   def new
