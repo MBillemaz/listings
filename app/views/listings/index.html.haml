@@ -17,8 +17,7 @@
                 category (hardcoded)
           .row
             .col-md-4
-              .thumbnail
-                %img.img-rounded{:src => "/images/img_toshiba.jpg"}
+              = image_tag l.picture, width: 300, class: 'img-responsive'
             .col-md-8
               .row
                 .col-md-12
@@ -30,5 +29,6 @@
                     %p
                       = number_to_currency(l.price, :unit => "€")
                 .col-md-6
-                  %button.btn.btn-warning{:type => "button"}
-                    = t('contact')
+                  .pull-right
+                    %button.btn.btn-warning{:type => "button"}
+                      = t('contact')
