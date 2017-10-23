@@ -1,3 +1,9 @@
+user1:
+  first_name: 'User1'
+  last_name: 'User1'
+  role: user_role
+  email: "user1@domain.com"
+
 admin:
   first_name: 'admin'
   last_name: 'admin last name'
