@@ -24,3 +24,11 @@ car:
   category: cars
   picture: File.open("#{Rails.root}/test/fixtures/files/avatar.png")
   price: 2000
+
+tagada:
+  user: seller
+  title: 'tagada title'
+  description: 'Tagada, best candy ever'
+  category: electronics
+  picture: File.open("#{Rails.root}/test/fixtures/files/avatar.png")
+  price: 200

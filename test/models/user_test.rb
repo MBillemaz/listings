@@ -2,17 +2,17 @@ require 'test_helper'
 
 describe User do
 
-  before do 
+  before do
     @seller = users(:seller)
     @admin = users(:admin)
-    @buyer = user(:buyer)
+    @buyer = users(:buyer)
   end
 
-  it "returns true if role != admin" do 
+  it "returns true if role != admin" do
     assert_equal false, @seller.is_admin?
   end
 
-  it "returns true if role == admin" do 
+  it "returns true if role == admin" do
     assert_equal true, @admin.is_admin?
   end
 

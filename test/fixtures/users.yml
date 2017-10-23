@@ -13,5 +13,5 @@ seller:
 buyer:
   first_name: 'John'
   last_name: 'Doe'
-  email: "buyer@domain.com"
   role: user_role
+  email: "buyer@domain.com"

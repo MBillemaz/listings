@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 ### Insert role table ###
-# Role.create(name: 'user')
-# Role.create(name: 'admin')
+#Role.create(name: 'user')
+#Role.create(name: 'admin')
 
 ### Insert category table
-# Category.create(name: 'Electronique')
-# Category.create(name: 'Alimentaire')
-# Category.create(name: 'Autre')
+#Category.create(name: 'Electronique')
+#Category.create(name: 'Alimentaire')
+#Category.create(name: 'Autre')
