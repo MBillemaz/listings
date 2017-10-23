@@ -13,7 +13,7 @@
               %p.date
                 = listing.created_at.strftime("%F %H:%M")
             .col-md-10
-              %p.category
+              %a.category{:href => "#{listings_path(category_id: listing.category.id)}"}
                 %span.badge
                   = listing.category.name
           .row
