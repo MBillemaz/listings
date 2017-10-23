@@ -1,0 +1,42 @@
+= render partial: '/account/shared/nav'
+
+%h2
+  Edit profile
+.form-container
+  .well
+    = form_for(@user, url: account_user_index_path, html: { method: :post }) do |f|
+      .field
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, class: "form-control"
+      .field
+        = f.label t("first_name")
+        %br/
+        = f.text_field :first_name, class: "form-control"
+      .field
+        = f.label t("last_name")
+        %br/
+        = f.text_field :last_name, class: "form-control"
+      .actions
+        = f.submit "Update", class: "btn btn-primary"
+  .well
+    = form_for(@user, url: account_user_index_path, html: { method: :post }) do |f|
+      .field
+        = f.label t("password")
+        %br/
+        = f.password_field :password, autocomplete: "off" , class: "form-control"
+        - if @minimum_password_length
+          %em
+            = @minimum_password_length
+            characters minimum
+      .field
+        = f.label t("passwordc")
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off" , class: "form-control"
+      .field
+        = f.label t("current_pass")
+        %br/
+        = f.password_field :current_password, autocomplete: "off" , class: "form-control"
+      .actions
+        = f.submit "Update", class: "btn btn-primary"
+= link_to "Back", :back

@@ -49,8 +49,11 @@ fr:
   image: "Image"
   price: "Prix"
   date: "Date"
+  my_contacts: "Mes contacts"
+  my_messages: "Mes messages"
+  my_profile: "Mon profil"
   account:
-    navs:
+    nav:
       my_contacts: "Mes contacts"
       my_messages: "Mes messages"
       my_profile: "Mon profil"
