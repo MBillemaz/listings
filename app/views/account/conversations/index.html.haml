@@ -1,1 +1,15 @@
 = render partial: '/account/shared/nav'
+
+%table.table{:border => "1"}
+  %thead
+    %th Image
+    %th Prix
+    %th Date
+    %th Message
+  %tbody
+    - @conversations.each do |conv|
+      %tr
+        %td= image_tag conv.listing.thumbnail , width: 300, class: 'img-responsive'
+        %td= number_to_currency(conv.listing.price, :unit => "€")
+        %td= conv.messages.last.updated_at
+        %td= link_to conv.messages.last.message, account_conversation_path(conv.id)

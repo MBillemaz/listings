@@ -1,5 +1,4 @@
 .menu
   .button-list
-    = button_to t("my_contacts"), account_contacts_path, class: "btn", method: :get
-    = button_to t("my_messages"), account_messages_path, class: "btn", method: :get
+    = button_to t("my_messages"), account_conversations_path, class: "btn", method: :get
     = button_to t("my_profile"), account_user_index_path, class: "btn", method: :get

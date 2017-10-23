@@ -1,0 +1,5 @@
+= render partial: '/account/shared/nav'
+
+.table
+- @conversation.messages.each do |message|
+    .col-xs-5= message.message

@@ -10,8 +10,7 @@ Rails.application.routes.draw do
 
     namespace :account do
       resources :user, only: [:index, :create]
-      resources :messages, only: [:index]
-      resources :conversation, only: [:index, :create]
+      resources :conversations, only: [:index, :create, :show]
     end
     
     devise_for :users
