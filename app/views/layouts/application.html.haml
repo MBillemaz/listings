@@ -16,10 +16,9 @@
       = yield
     .container.footer
       %ul
-        /- Page.footer(I18n.locale).each
-        Hello!!!
-        - Page.footer(I18n.locale).each
-        %li= link_to 'Terms of use', '#'
-        %li= link_to 'Legal notice', '#'
+        - Page.footer(I18n.locale).each do |page|
+          %li= link_to page.title, page_path(page.id)
+        /%li= link_to 'Terms of use', '#'
+        /%li= link_to 'Legal notice', '#'
 
     %script{:crossorigin => "anonymous", :integrity => "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
     #get '/listings', to: 'listings#index'
     #get '/listings/new', to: 'listings#new'
-    get '/pages/:id', to: 'page#index', as: 'page'
+
+    #get '/pages/:id', to: 'pages#show', as: 'pages'
+    resources :pages, only: [:show]
 
     devise_for :users
     #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
