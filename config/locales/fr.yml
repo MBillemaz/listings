@@ -64,6 +64,7 @@ fr:
   errors:
     format: "%{attribute} %{message}"
     messages:
+      not_saved: Erreur
       accepted: doit être accepté(e)
       blank: doit être rempli(e)
       present: doit être vide
