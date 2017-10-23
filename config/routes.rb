@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       resources :contacts, only: [:index]
     end
     
+    get '/pages/:id', to: 'page#show', as: 'page'
+
     devise_for :users
     #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
     
