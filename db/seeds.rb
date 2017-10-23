@@ -5,16 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# Category.create(name: "Electronique")
-# Category.create(name: "Musique")
-# Category.create(name: "Bricolage")
-# Category.create(name: "Automobile")
-# Category.create(name: "Mobilier")
-# User.create(
-#   email: 'gbarillot@gmail.com',
-#   first_name: 'Guillaume',
-#   last_name: 'Barillot',
-#   is_admin: true,
-#   password: 'azerty',
-#   password_confirmation: 'azerty'
-# )
+
+### Insert role table ###
+# Role.create(name: 'user')
+# Role.create(name: 'admin')
+
+### Insert category table
+# Category.create(name: 'Electronique')
+# Category.create(name: 'Alimentaire')
+# Category.create(name: 'Autre')
