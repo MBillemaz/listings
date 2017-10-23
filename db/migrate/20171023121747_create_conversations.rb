@@ -8,6 +8,7 @@ class CreateConversations < ActiveRecord::Migration[5.1]
       t.integer "user_id"
       t.integer "listing_id"
     end
-    add_column :messages, :conversation_id
+
+    add_column :messages, :conversation_id, :integer
   end
 end

@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
   def index
 
-    @listings = Listing.search(params)
+    @listings = Listing.search(params, current_user)
     #@listings = Listing.all
     respond_to do |format|
       format.html
@@ -27,12 +27,7 @@ class ListingsController < ApplicationController
   end
 
   def contact
-    @contact = Contact.new(
-      user_id: current_user.id,
-      listing_id: params[:listing_id],
-      message: params[:message]
-    )
-    @contact.save
+    Conversation.generate(params, current_user)
   end
 
 private
