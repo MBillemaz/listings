@@ -175,3 +175,12 @@ form.busy {
 .form-container .field input{
   margin-bottom: 5%;
 }
+
+.button-list{
+  display: flex;
+  flex-direction: row;
+}
+
+.button-list form{
+  margin-right: 2%;
+}

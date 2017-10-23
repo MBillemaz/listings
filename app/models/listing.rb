@@ -16,5 +16,4 @@ class Listing < ApplicationRecord
   def self.search(args)
     Listing.where("title LIKE :query OR description LIKE :query", query: "%#{args[:keywords]}%")
   end
-
 end

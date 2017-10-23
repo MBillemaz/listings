@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     #get '/listings/new', to: 'listings#new'
 
     namespace :account do
-      resources :user, only: [:index, :update]
+      resources :user, only: [:index, :create]
       resources :messages, only: [:index]
-      resources :contacts, only: [:index]
+      resources :conversation, only: [:index, :create]
     end
     
     devise_for :users

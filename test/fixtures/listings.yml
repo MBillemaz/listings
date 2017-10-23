@@ -32,3 +32,11 @@ tagada:
   category: electronics
   picture: File.open("#{Rails.root}/test/fixtures/files/avatar.png")
   price: 200
+
+mouse:
+  user: buyer
+  title: 'mouse title'
+  description: 'mouse description'
+  category: cars
+  picture: File.open("#{Rails.root}/test/fixtures/files/avatar.png")
+  price: 10
