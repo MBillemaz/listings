@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     #get '/listings', to: 'listings#index'
     #get '/listings/new', to: 'listings#new'
 
+    namespace :account do
+      resources :user, only: [:index, :update]
+      resources :messages, only: [:index]
+      resources :contacts, only: [:index]
+    end
+    
     devise_for :users
     #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
     
