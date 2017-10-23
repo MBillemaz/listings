@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :listings
-  has_many :contact
+  has_many :messages
+  has_many :conversations
   belongs_to :role
   validates_presence_of :first_name, :last_name, :email
 
