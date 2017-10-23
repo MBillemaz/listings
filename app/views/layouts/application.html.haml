@@ -16,6 +16,9 @@
       = yield
     .container.footer
       %ul
+        /- Page.footer(I18n.locale).each
+        Hello!!!
+        - Page.footer(I18n.locale).each
         %li= link_to 'Terms of use', '#'
         %li= link_to 'Legal notice', '#'
 
