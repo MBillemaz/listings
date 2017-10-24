@@ -43,6 +43,9 @@ class Messenger
   def message_valid?
     if @listing_id == 0
       @errors.push({conversation: ['Please provide listing']})
+      return false
+    else
+      return true
     end
   end
 

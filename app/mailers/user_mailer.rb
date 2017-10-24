@@ -4,7 +4,6 @@ class UserMailer < ApplicationMailer
     @listing = Listing.find(listing_id)
     @client_email = email
     @message = message
-
     mail(to: @listing.user.email, subject: 'Réponse à votre annonce:')
   end
 

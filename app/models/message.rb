@@ -8,7 +8,8 @@ class Message < ApplicationRecord
       Message.where("conversation_id = ?", conv_id)
     end
 
-    def send_email(args)
-      UserMailer.new_contact(args[:listing_id], args[:recipient_email], args[:message]).deliver_now
+    def send_email
+      email = conversation.listing.user.email
+      UserMailer.new_contact(conversation.listing_id, email, message).deliver_now
     end
 end
