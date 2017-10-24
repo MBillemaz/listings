@@ -17,6 +17,11 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
+  $("[data-do='showChatModal']").click(function(e) {
+    e.preventDefault();
+    $("[data-is='chatModal']").modal();
+  });
+
   $("[data-is='contactForm']").submit(function() {
     form = $(this);
     $.ajax({
@@ -35,6 +40,14 @@ $(document).on('turbolinks:load', function(){
 
     return false;
   });
+
+  $(document).on("keypress", "[data-is='chat']", function(event) {
+     if (event.keyCode === 13) { // return/enter = send
+       App.chat.speak(event.target.value);
+       event.target.value = '';
+       return event.preventDefault();
+     }
+   });
 
   $("[data-do='setLocale']").change(function() {
     window.location.href = $(this).val();

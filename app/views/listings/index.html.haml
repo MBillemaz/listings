@@ -32,11 +32,15 @@
                 .col-md-6
                   .pull-right
                     - if user_signed_in?
-                      %button.btn.btn-warning{ data: { do: "showContactModal", id: listing.id}}  
+                      %button.btn.btn-warning{ data: { do: "showContactModal", id: listing.id}}
                         = t("contact")
 
                     - else
                       = button_to t("contact"), new_user_session_path, class: "btn btn-warning", method: :get
 
+                    %button.btn.btn-danger{data: {do: "showChatModal"}}
+                      Chat
+
 
 = render partial: '/modals/contact'
+= render partial: '/modals/chat'

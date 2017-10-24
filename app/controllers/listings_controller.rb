@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
 
     @listings = Listing.search(params)
@@ -27,7 +29,18 @@ class ListingsController < ApplicationController
   end
 
   def contact
-    Conversation.generate(params, current_user)
+    #Conversation.generate(params, current_user)
+    message = Messenger.new(
+      listing_id: params[:listing_id].to_i,
+      user: current_user,
+      message: params[:message]
+    ).call
+
+    if message.errors.any?
+      render json: {success: false, errors: message.errors}.to_json, status: 422
+    else
+      render json: {success: true}.to_json
+    end
   end
 
 private

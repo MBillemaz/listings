@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount ActionCable.server => '/cable'
   localized do
-    
+
     root 'homepage#index'
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
     #get '/listings', to: 'listings#index'
@@ -12,12 +13,12 @@ Rails.application.routes.draw do
       resources :user, only: [:index, :create]
       resources :conversations, only: [:index, :create, :show]
     end
-    
+
     devise_for :users
     #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-    
+
     post '/listings/contact', to: 'listings#contact', as: 'listing_contact'
-    
+
     resources :listings
 
     #apipie
